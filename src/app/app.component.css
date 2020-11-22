@@ -1,0 +1,39 @@
+.person1 svg.hand-scissors {
+  transform: scaleX(-1);
+}
+
+.person1 svg.hand-paper {
+  transform: rotate(90deg);
+}
+
+.person1 svg.hand-rock {
+  transform: rotate(90deg);
+}
+
+.person2 svg.hand-scissors {
+  /**/
+}
+
+.person2 svg.hand-paper {
+  transform: rotate(-90deg) scaleX(-1);;
+}
+
+.person2 svg.hand-rock {
+  transform: rotate(-90deg) scaleX(-1);;
+}
+
+.text-gold {
+  color: #c98917
+}
+
+h1 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  padding: 20px 0px;
+}
+
+.a {
+  text-align: center;
+}

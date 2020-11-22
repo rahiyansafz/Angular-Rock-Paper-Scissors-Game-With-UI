@@ -1,0 +1,62 @@
+<h1>Rock, Paper, Scissors</h1>
+
+<div class=" a flex flex-col justify-center items-center">
+	<h2 class="mt-8 text-xl font-semibold">Scoreboard</h2>
+	<div class="flex justify-center py-2 mt-5 border">
+		<div class="px-4 border-r border-black text-xl">{{ scores.computer }}</div>
+		<div class="px-4 text-xl">{{ scores.person }}</div>
+	</div>
+</div>
+
+<div class="a mt-10">
+
+	<div class="grid grid-cols-2 gap-4">
+
+		<div class="person1 flex items-center justify-end" *ngIf="computer">
+			<span class="mr-8">Computer</span>
+			<svg [ngClass]="'icon text-gold hand-' + computer" *ngIf="computer">
+				<use [attr.xlink:href]="'#hand-' + computer"></use>
+			</svg>
+		</div>
+
+		<div class="person2 flex items-center justify-start" *ngIf="person">
+			<svg [ngClass]="'icon text-gold hand-' + person" *ngIf="person">
+				<use [attr.xlink:href]="'#hand-' + person"></use>
+			</svg>
+			<span class="ml-8 font-bold">You</span>
+		</div>
+
+	</div>
+
+	<div class="text-4xl font-bold uppercase text-center" *ngIf="!computer && !person">
+		Go go go
+	</div>
+
+</div>
+
+<div class="absolute bottom-0 py-4 w-screen flex flex-col justify-center items-center">
+
+	<div class="mt-4 grid grid-cols-3 gap-4">
+
+		<button class="p-4 border-4 border-gray-100 rounded-full hover:border-gray-300 cursor-pointer" (click)="play('rock')">
+      <svg class="icon hand-rock text-gray-600">
+        <use xlink:href="#hand-rock"></use>
+      </svg>
+    </button>
+
+		<button class="p-4 border-4 border-gray-100 rounded-full hover:border-gray-300 cursor-pointer" (click)="play('paper')">
+      <svg class="icon hand-paper text-gray-600">
+        <use xlink:href="#hand-paper"></use>
+      </svg>
+    </button>
+
+		<button class="p-4 border-4 border-gray-100 rounded-full hover:border-gray-300 cursor-pointer" (click)="play('scissors')">
+      <svg class="icon hand-scissors text-gray-600">
+        <use xlink:href="#hand-scissors"></use>
+      </svg>
+    </button>
+	</div>
+
+	<button class="mt-8 py-2 px-4 bg-gray-300 rounded uppercase font-bold" (click)="reset()">Reset</button>
+
+</div>
